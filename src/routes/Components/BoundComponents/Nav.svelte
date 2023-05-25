@@ -1,45 +1,23 @@
 <script>
 // @ts-nocheck
-    import { tick } from "svelte";
     import { selectionStore, activeItem, widthDetector, showMobileMenu, heightDetector, mobNpcLogic } from "./myStores";
+    import { createEventDispatcher } from "svelte";
+
+    const dispatch = createEventDispatcher();
 
     //animations
     import { fly } from "svelte/transition";
 
     let x = 0
-    
-   $: { 
-        if($widthDetector >= 589){
-            mobNpcLogic.set(true);
-        }
-    }
+
   
 
     //takes a string value from selectionStore array
     const selection = (value) => {
         activeItem.set(value)
         
-        if($mobNpcLogic){
-            if(value === "Profile"){
-                x = 0;
-            }else if(value === "Knowledge"){
-                x = 780;
-            }else if(value === "Projects"){
-                x = 2032;
-            }else if(value === "Contact"){
-                x = 4424;
-            }
-        }else{
-            if(value === "Profile"){
-                x = 0;
-            }else if(value === "Knowledge"){
-                x = 1438;
-            }else if(value === "Projects"){
-                x = 3352;
-            }else if(value === "Contact"){
-                x = 4424;
-            }
-        }
+        dispatch("dataDeliver", value);
+    
     
     }
 
