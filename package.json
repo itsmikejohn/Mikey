@@ -26,6 +26,7 @@
 	"type": "module",
 	"dependencies": {
 		"@splidejs/svelte-splide": "^0.2.9",
+		"firebase": "^9.22.1",
 		"svelte-scrollto-element": "^0.7.0"
 	}
 }
