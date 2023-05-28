@@ -37,7 +37,10 @@ export const heightDetector = writable(0);
 export const showMobileMenu = writable(false);
 export const mobNpcLogic = writable(false);
 
-
+//database pop
+export const successSendLogic = writable(false);
+export const msgStore = writable("");
+export const sendLogic = writable(false);
 
 //projects
 //project one 

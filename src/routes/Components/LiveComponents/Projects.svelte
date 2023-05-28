@@ -18,7 +18,7 @@
 <div class="flex flex-col mx-auto sm:max-w-[800px] justify-center items-center gap-5">
 
     <div class="">
-        <a href="https://modern-spa-ourthesis.netlify.app/" target="blank" class="w-full font-bold underline italic">ICCT Colleges Enrollment System Design and Implementation for Incoming Students for the Year 2023</a>
+        <a  href="https://modern-spa-ourthesis.netlify.app/" target="blank" class="w-full font-bold underline italic p-2">ICCT Colleges Enrollment System Design and Implementation for Incoming Students for the Year 2023</a>
     </div>
 
     <div class="-mt-8">
@@ -44,7 +44,7 @@
 
 
     <div class="">
-        <a href="https://barangaysn3.vercel.app/" target="blank" class="w-full font-bold underline italic">Barangay SN3 Appointment System</a>
+        <a  href="https://barangaysn3.vercel.app/" target="blank" class="w-full font-bold underline italic p-2">Barangay SN3 Appointment System</a>
     </div>
 
     <div class="-mt-8">

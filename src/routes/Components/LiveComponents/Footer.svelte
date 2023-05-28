@@ -1,5 +1,27 @@
 <script>
+    import { successSendLogic, msgStore, sendLogic } from "../BoundComponents/myStores";
 
+
+    //database calls and hooks
+    import {db} from "../../db/firebase";
+    import {addDoc, collection, query, orderBy} from "firebase/firestore";
+
+    
+
+    const submitData = async() => {
+        if($msgStore.trim().length < 4){
+            sendLogic.set(true);
+        }else{
+            const colRef = collection(db, "userResponses");
+            await addDoc(colRef, {
+                anonymousMsg: $msgStore
+            }).then(() => {
+                msgStore.set("");
+                successSendLogic.set(true);
+            })
+        }
+        
+    }
 </script>
 
 
@@ -35,9 +57,11 @@
             <p class="text-white font-bold italic text-lg">Leave a message</p>
             <div class="w-8 border-2 border-yellow-400"></div>
             <p class="text-white p-4">Your inputs will be save into my database.. thank you!!</p>
-            <textarea placeholder="Say something here.." class="w-full p-4 focus:outline-none mt-10"/>
+            <textarea placeholder="Say something here.." class="w-full p-4 focus:outline-none mt-10" bind:value={$msgStore}/>
             <div class="">
-                <button class="w-full bg-blue-500 text-white font-bold h-10 rounded-lg transition-all active:scale-95 hover:scale-105 mt-2">Submit</button>
+                <button class="w-full bg-blue-500 text-white font-bold h-10 rounded-lg transition-all active:scale-95 hover:scale-105 mt-2"
+                on:click={submitData}
+                >Submit</button>
             </div>
         </div>
         
